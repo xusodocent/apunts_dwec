@@ -88,6 +88,13 @@ drwxr-x--- 23 xus xus 4096 de set.  15 09:05 ../
 drwxrwxr-x  7 xus xus 4096 de set.  15 09:05 .git/
 ```
 
+Podem indentificar-nos amb el nostre nom i correu.
+
+```bash
+xus@angliru:~/Documents/IES_El_Just_2022_2023/apunts_markdown$ git config --global user.email "jorti@ieseljust.com"
+xus@angliru:~/Documents/IES_El_Just_2022_2023/apunts_markdown$ git config --global user.name "Xuso"
+```
+
 ## 4.3 Unir repositori local i remot
 
 Hem de tindre la `url` del nostre repositori a GitHub
@@ -113,5 +120,88 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
+Afegim tots els arxius amb `git add . ` i tornem a comprovar l'estat.
+
+```bash
+xus@angliru:~/Documents/IES_El_Just_2022_2023/apunts_markdown$ git add .
+xus@angliru:~/Documents/IES_El_Just_2022_2023/apunts_markdown$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   T1/Tema1.html
+	new file:   T1/Tema1.md
+	new file:   T1/Tema1.pdf
+	new file:   T1/eisvogel.latex
+	new file:   T1/img/bkaztar.png
+	new file:   T1/img/bkaztar.xcf
+	new file:   T1/img/bkmo.png
+	new file:   T1/img/bkmotar.png
+	new file:   T1/img/logocap.png
+	new file:   T1/img/portadaparcial.png
+
+```
+
+Vegem que s'han afegit correctament.
+
+## 4.5 El commit
+
+El `commit` serveix per a guardar els canvis fets als arxius del nostre projecte afegint un missatge.
+
+> L'opció `-m` indica que s'utilitzarà un missatge o comentari
+
+```bash
+xus@angliru:~/Documents/IES_El_Just_2022_2023/apunts_markdown$ git commit -m "Fem el primer commit"
+[master (root-commit) b7d39d6] Fem el primer commit
+ 10 files changed, 1185 insertions(+)
+ create mode 100644 T1/Tema1.html
+ create mode 100644 T1/Tema1.md
+ create mode 100644 T1/Tema1.pdf
+ create mode 100644 T1/eisvogel.latex
+ create mode 100644 T1/img/bkaztar.png
+ create mode 100644 T1/img/bkaztar.xcf
+ create mode 100644 T1/img/bkmo.png
+ create mode 100644 T1/img/bkmotar.png
+ create mode 100644 T1/img/logocap.png
+ create mode 100644 T1/img/portadaparcial.png
+```
+
+Tens una explicació més detallada al següent [enllaç](https://www.freecodecamp.org/espanol/news/el-comando-git-commit-explicado/).
+
+## 4.6 Pujar arxius a repositori remot
+
+El comandament per a pujar arxius des del nostre repositori local a `Github` és `git push`.
+
+> Recorda que cal utilitzar el token de Github
+
+```bash
+xus@angliru:~/Documents/IES_El_Just_2022_2023/apunts_markdown$ git push origin master
+Username for 'https://github.com': jorti@ieseljust.com
+Password for 'https://jorti@ieseljust.com@github.com': 
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (14/14), 440.53 KiB | 15.73 MiB/s, done.
+Total 14 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/xusodocent/apunts_dwec.git
+ * [new branch]      master -> master
+```
+## 4.7 Actualitzar des del repositori remot.
+
+Pot donar-se el cas que participes a un projecte amb més programadors i tots contribui pujant arxius a un mateix repositori remot. Per tal d'actualitzar el teu repositori local des del remot cal fer `git pull`. 
+
+> Tal vegada necessites especificar repositori i branca.
+
+```bash
+xus@angliru:~/Documents/IES_El_Just_2022_2023/apunts_markdown$ git pull origin master
+From https://github.com/xusodocent/apunts_dwec
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+```
+
+[Ací](https://www.freecodecamp.org/espanol/news/el-comando-git-commit-explicado/) tens una explicació més detallada.
 
 
